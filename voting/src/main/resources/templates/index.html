@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Vote for Class Representative</title>
+</head>
+<body>
+    <h2>Vote for Your Class Representative</h2>
+    <form method="post" action="/vote">
+        <select name="candidate">
+            <option value="Anjali">Anjali</option>
+            <option value="Rohan">Rohan</option>
+            <option value="Priya">Priya</option>
+        </select>
+        <button type="submit">Vote</button>
+    </form>
+
+    <h3>Live Results:</h3>
+    <ul>
+        <li th:each="entry : ${votes}" th:text="${entry.key + ': ' + entry.value + ' votes'}"></li>
+    </ul>
+</body>
+</html>
